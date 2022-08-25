@@ -1,9 +1,11 @@
 function move(element) {
     element.style.position = 'fixed'
+
     function moveToCoordinates(left, bottom) {
         element.style.left = left + 'px'
         element.style.bottom = bottom + 'px'
     }
+
     function moveWithArrowKeys(left, bottom, callback) {
         let direction = null;
         let x = left;
@@ -55,9 +57,8 @@ function move(element) {
         })
     }
 
-}
-
-return {
-    to: moveToCoordinates
+    return {
+        to: moveToCoordinates,
         withArrowKeys: moveWithArrowKeys
+    }
 }
